@@ -1,2 +1,0 @@
-# CAL
-Proj de CAL
