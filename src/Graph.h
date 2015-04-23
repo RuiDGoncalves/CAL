@@ -75,7 +75,7 @@ template <class T>
 class Graph {
 	vector<Rua> ruas;
 	vector<Vertex<T> *> vertexSet;
-	vector<PoI> PoIs;
+	//vector<PoI> PoIs;
 	void dfs(Vertex<T> *v, vector<T> &res) const;
 public:
 	bool addVertex(const T &in);
@@ -306,8 +306,8 @@ void Graph<T>::loadPoIs(){
 			for(int j=0;j<vertexSet.size();j++){
 				if(vertexSet[j]->getInfo().getNome == ruaStr){
 					rua = vertexSet[j]->getInfo();
-					PoI p1(nomeStr, rua);
-					PoIs.push_back(p1);
+					//POI p1(nomeStr, rua);
+					//POIs.push_back(p1);
 				}
 			}
 		}

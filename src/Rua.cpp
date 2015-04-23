@@ -27,26 +27,3 @@ bool Rua::operator==(const Rua& r1){
     	return true;
     else return false;
  }
-
-PoI::PoI(string nome, Rua* rua){
-	this->nome = nome;
-	this->rua = rua;
-}
-
-string PoI::getNome() const{
-	return nome;
-}
-
-Rua* PoI::getRua(){
-	return rua;
-}
-
-void PoI::setNome(string nome){
-	this->nome = nome;
-}
-
-void PoI::setRua(Rua* rua){
-	this->rua = rua;
-}
-
-

@@ -3,7 +3,6 @@
 using namespace std;
 
 int main() {
-
 	Graph<Rua> graph;
 
 	graph.loadNodes();

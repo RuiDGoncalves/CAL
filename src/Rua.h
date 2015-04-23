@@ -21,16 +21,4 @@ public:
 	bool operator==(const Rua& r1);
 };
 
-class PoI{
-	string nome;
-	Rua *rua;
-public:
-	PoI();
-	PoI(string nome, Rua* rua);
-	string getNome() const;
-	void setNome(string nome);
-	Rua* getRua();
-	void setRua(Rua* rua);
-};
-
 #endif
