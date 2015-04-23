@@ -1,0 +1,14 @@
+NODES
+3
+Rua da Alegria
+30
++
+Rua das Flores
+40
+Rua da Alegria
++
+Rua Trololo
+20
+Rua da Alegria
+Rua das Flores
++
