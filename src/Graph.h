@@ -75,6 +75,7 @@ template <class T>
 class Graph {
 	vector<Rua> ruas;
 	vector<Vertex<T> *> vertexSet;
+	vector<PoI> PoIs;
 	void dfs(Vertex<T> *v, vector<T> &res) const;
 public:
 	bool addVertex(const T &in);
@@ -87,6 +88,7 @@ public:
 	vector<Vertex<T> * > getVertexSet() const;
 	int getNumVertex() const;
 	void loadNodes();
+	void loadPoIs();
 };
 
 template <class T>
@@ -280,7 +282,7 @@ void Graph<T>::loadNodes(){
 				}
 			}
 		}
-
+		vertexSet = nodes;
 		graphFile.close();
 	}
 	else cout<<"Unable to open Graph.txt";
@@ -288,9 +290,31 @@ void Graph<T>::loadNodes(){
 }
 
 
-
-
-
+template <class T>
+void Graph<T>::loadPoIs(){
+	Rua* rua;
+	int numPois;
+	string loadStr, nomeStr, ruaStr;
+	ifstream PoisFile("PoIs.txt");
+	if (PoisFile.is_open()){
+		getline(PoisFile,loadStr); //Ler "POIS"
+		getline(PoisFile,loadStr); //Ler numPois
+		numPois = atoi(loadStr.c_str());
+		for(int i=0; i<numPois;i++){
+			getline(PoisFile,nomeStr); //Le o nome do PoI
+			getline(PoisFile, ruaStr);
+			for(int j=0;j<vertexSet.size();j++){
+				if(vertexSet[j]->getInfo().getNome == ruaStr){
+					rua = vertexSet[j]->getInfo();
+					PoI p1(nomeStr, rua);
+					PoIs.push_back(p1);
+				}
+			}
+		}
+		PoisFile.close();
+	}
+	else cout<<"Unable to open Pois.txt";
+}
 
 
 
