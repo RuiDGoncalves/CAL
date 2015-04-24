@@ -1,6 +1,6 @@
 #include "Rua.h"
 
-Rua::Rua(string nome, int comp, Coords coords, vector<string> connections){
+Rua::Rua(string nome, int comp, Coord coords, vector<string> connections){
 	this->nome = nome;
 	this->comprimento = comp;
 	this->coords = coords;
@@ -10,7 +10,7 @@ Rua::Rua(string nome, int comp, Coords coords, vector<string> connections){
 Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections){
 	this->nome = nome;
 	this->comprimento = comp;
-	Coords newCoords;
+	Coord newCoords;
 	newCoords.latitude = lat;
 	newCoords.longitude = lon;
 	this->coords = newCoords;
@@ -40,10 +40,10 @@ bool Rua::operator==(const Rua& r1){
  }
 
 
-Coords Rua::getCoords(){
+Coord Rua::getCoords(){
 	return coords;
 }
-void Rua::setCoords(Coords coords){
+void Rua::setCoords(Coord coords){
 	this->coords = coords;
 }
 
@@ -58,7 +58,7 @@ void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 //		cout << "Vai buscar a rua: " << nome << endl;
 		streets >> comp;
 		streets.ignore();
-		Coords coords;
+		Coord coords;
 		streets >> coords.latitude;
 		streets >> coords.longitude;
 		streets.ignore();
@@ -83,7 +83,7 @@ void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 	list<Rua*>::iterator it = ruas.begin();
 	for(;it != ruas.end(); it++){
 		vector<string> connections = (*it)->connections;
-		for(int i = 0; i < connections.size(); i++){
+		for(unsigned int i = 0; i < connections.size(); i++){
 			list<Rua*>::iterator adj = ruas.begin();
 			for(;adj != ruas.end(); adj++)
 				if( (*adj)->getNome() == connections[i])

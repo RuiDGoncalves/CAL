@@ -15,7 +15,7 @@
 using namespace std;
 
 
-struct Coords{
+struct Coord{
 	float longitude;
 	float latitude;
 };
@@ -23,19 +23,19 @@ struct Coords{
 class Rua{
 	string nome;
 	int comprimento;
-	Coords coords;
+	Coord coords;
 public:
 	vector<string> connections;
 
-	Rua(string nome, int comp, Coords coords,vector<string> connections);
+	Rua(string nome, int comp, Coord coords,vector<string> connections);
 	Rua(string nome, int comp,float lat,float lon,vector<string> connections);
 	string getNome() const;
 	void setNome(string n);
 	int getComprimento();
 	void setComprimento(int comp);
 	bool operator==(const Rua& r1);
-	Coords getCoords();
-	void setCoords(Coords coords);
+	Coord getCoords();
+	void setCoords(Coord coords);
 };
 
 void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas);
