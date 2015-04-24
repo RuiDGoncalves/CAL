@@ -1,0 +1,18 @@
+Rua 1
+150
+44.599
+48.55
+Rua Armando Saraiva
+Rua Carvalho Eanes
+
+Rua Armando Saraiva
+120
+44.589
+48.55
+Rua 1
+Rua Carvalho Eanes
+
+Rua Carvalho Eanes
+800
+44.595
+48.56

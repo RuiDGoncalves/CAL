@@ -3,8 +3,13 @@
 #ifndef RUA_H_
 #define RUA_H_
 
+#include <iostream>
 #include <string>
 #include <vector>
+#include <list>
+#include <unistd.h>
+#include <cmath>
+
 #include "Graph.h"
 
 using namespace std;
@@ -33,7 +38,7 @@ public:
 	void setCoords(Coords coords);
 };
 
-void loadStreets(Graph<Rua> &graph, vector<Rua*> &ruas);
+void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas);
 
 
 #endif

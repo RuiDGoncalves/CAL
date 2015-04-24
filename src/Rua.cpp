@@ -4,6 +4,7 @@ Rua::Rua(string nome, int comp, Coords coords, vector<string> connections){
 	this->nome = nome;
 	this->comprimento = comp;
 	this->coords = coords;
+	this->connections = connections;
 }
 
 Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections){
@@ -13,6 +14,7 @@ Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections
 	newCoords.latitude = lat;
 	newCoords.longitude = lon;
 	this->coords = newCoords;
+	this->connections = connections;
 }
 
 string Rua::getNome() const{
@@ -46,24 +48,26 @@ void Rua::setCoords(Coords coords){
 }
 
 
-void loadStreets(Graph<Rua> &graph, vector<Rua*> &ruas){
+void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 	ifstream streets;
 	streets.open("Ruas.txt");
 	string nome;
 	int comp;
 	while(!streets.eof()){
 		getline(streets, nome);
+//		cout << "Vai buscar a rua: " << nome << endl;
 		streets >> comp;
 		streets.ignore();
 		Coords coords;
 		streets >> coords.latitude;
 		streets >> coords.longitude;
+		streets.ignore();
 		vector<string> ruasAdj;
 
-		while(!streets.eof() || streets.peek() != '\n'){
-			string ruaAdj;
-			getline(streets,ruaAdj);
-			ruasAdj.push_back(ruaAdj);
+		while(!streets.eof() && (char) streets.peek() != '\n'){
+			string adjacentStreet;
+			getline(streets,adjacentStreet);
+			ruasAdj.push_back(adjacentStreet);
 		}
 
 		Rua * rua = new Rua(nome, comp, coords, ruasAdj);
@@ -76,11 +80,11 @@ void loadStreets(Graph<Rua> &graph, vector<Rua*> &ruas){
 
 	}
 
-	vector<Rua*>::iterator it = ruas.begin();
+	list<Rua*>::iterator it = ruas.begin();
 	for(;it != ruas.end(); it++){
 		vector<string> connections = (*it)->connections;
 		for(int i = 0; i < connections.size(); i++){
-			vector<Rua*>::iterator adj = ruas.begin();
+			list<Rua*>::iterator adj = ruas.begin();
 			for(;adj != ruas.end(); adj++)
 				if( (*adj)->getNome() == connections[i])
 					graph.addEdge(*(*it), *(*adj), ((float)(*it)->getComprimento()+(*adj)->getComprimento())/2 );

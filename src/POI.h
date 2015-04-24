@@ -10,6 +10,7 @@
 
 #include <string>
 #include <vector>
+#include <list>
 #include "Rua.h"
 
 class ExceptionStreetNotFound{};
@@ -27,7 +28,7 @@ public:
 	bool operator==(const POI &b);
 };
 
-void loadPOIs(vector<POI*> &vecPOI, vector<Rua*> &ruas);
+void loadPOIs(list<POI*> &vecPOI, list<Rua*> &ruas);
 
 
 #endif /* POI_H_ */

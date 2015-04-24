@@ -43,15 +43,15 @@ bool POI::operator==(const POI &b){
 	return false;
 }
 
-void loadPOIs(vector<POI*> &vecPOI, vector<Rua*> &ruas){
+void loadPOIs(list<POI*> &vecPOI, list<Rua*> &ruas){
 	ifstream pois;
 	pois.open("POIs.txt");
 	string nome,nomeRua;
 	while(!pois.eof()){
 		getline(pois, nome);
 		getline(pois, nomeRua);
-
-		vector<Rua*>::iterator it = ruas.begin();
+		pois.ignore();
+		list<Rua*>::iterator it = ruas.begin();
 		Rua* rua;
 		for(;it != ruas.end(); it++)
 			if((*it)->getNome() == nomeRua)
