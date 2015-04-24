@@ -11,10 +11,9 @@
 #include <queue>
 #include <cstdlib>
 #include <fstream>
-#include "Rua.h"
 using namespace std;
 
-template <class T> class Edge;
+template <class nullT> class Edge;
 template <class T> class Graph;
 
 template <class T>

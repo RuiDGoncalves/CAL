@@ -11,19 +11,23 @@
 #include <string>
 #include <vector>
 #include "Rua.h"
+
+class ExceptionStreetNotFound{};
+
 class POI{
 private:
 	string name;
-	Rua * rua;
+	Rua * street;
 public:
 	POI(string name, Rua * rua);
 	string getName() const;
 	void setName(string name);
-	Rua * getRua() const;
-	void setRua(Rua* rua);
+	Rua * getStreet() const;
+	void setStreet(Rua* street);
 	bool operator==(const POI &b);
 };
 
+void loadPOIs(vector<POI*> &vecPOI, vector<Rua*> &ruas);
 
 
 #endif /* POI_H_ */

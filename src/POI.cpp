@@ -5,6 +5,8 @@
  *      Author: duarte
  */
 
+#include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
@@ -13,9 +15,9 @@
 
 
 
-POI::POI(string name, Rua* rua){
+POI::POI(string name, Rua* street){
 	this->name = name;
-	this->rua = rua;
+	this->street = street;
 }
 
 
@@ -27,12 +29,12 @@ void POI::setName(string name){
 	this->name = name;
 }
 
-Rua * POI::getRua() const{
-	return this->rua;
+Rua * POI::getStreet() const{
+	return this->street;
 }
 
-void POI::setRua(Rua * rua){
-	this->rua = rua;
+void POI::setStreet(Rua * rua){
+	this->street = rua;
 }
 
 bool POI::operator==(const POI &b){
@@ -40,6 +42,29 @@ bool POI::operator==(const POI &b){
 		return true;
 	return false;
 }
+
+void loadPOIs(vector<POI*> &vecPOI, vector<Rua*> &ruas){
+	ifstream pois;
+	pois.open("POIs.txt");
+	string nome,nomeRua;
+	while(!pois.eof()){
+		getline(pois, nome);
+		getline(pois, nomeRua);
+
+		vector<Rua*>::iterator it = ruas.begin();
+		Rua* rua;
+		for(;it != ruas.end(); it++)
+			if((*it)->getNome() == nomeRua)
+				rua = *it;
+		if(rua == NULL)
+			throw ExceptionStreetNotFound();
+
+		POI * poi = new POI(nome, rua);
+		vecPOI.push_back(poi);
+	}
+
+}
+
 
 
 
