@@ -91,3 +91,5 @@ void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 		}
 	}
 }
+
+

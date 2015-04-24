@@ -11,14 +11,11 @@
 #include <cmath>
 
 #include "Graph.h"
-
+#include "AuxiliarFunctions.h"
 using namespace std;
 
 
-struct Coord{
-	float longitude;
-	float latitude;
-};
+
 
 class Rua{
 	string nome;
