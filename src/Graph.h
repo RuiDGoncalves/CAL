@@ -73,9 +73,7 @@ Edge<T>::Edge(Vertex<T> *d, double w): dest(d), weight(w){}
 
 template <class T>
 class Graph {
-	vector<Rua> ruas;
 	vector<Vertex<T> *> vertexSet;
-	//vector<PoI> PoIs;
 	void dfs(Vertex<T> *v, vector<T> &res) const;
 public:
 	bool addVertex(const T &in);
@@ -87,8 +85,7 @@ public:
 	int maxNewChildren(Vertex<T> *v, T &inf) const;
 	vector<Vertex<T> * > getVertexSet() const;
 	int getNumVertex() const;
-	void loadNodes();
-	void loadPoIs();
+
 };
 
 template <class T>
@@ -248,72 +245,6 @@ int Graph<T>::maxNewChildren(Vertex<T> *v, T &inf) const {
 		}
 	}
 	return maxChildren;
-}
-
-template <class T>
-void Graph<T>::loadNodes(){
-
-	string loadStr, tempNomeStr, tempCompStr;
-	string tempDestStr = "temp";
-	vector<Vertex<Rua> *> nodes;
-
-	int numNodes;
-	ifstream graphFile("Nodes.txt");
-	if (graphFile.is_open()) {
-		getline(graphFile, loadStr); // 1a linha - "NODES and EDGES"
-		getline(graphFile, loadStr); // 2a linha - numNodes
-		numNodes = atoi(loadStr.c_str());
-		for (int i = 0; i < numNodes; i++) {
-			getline(graphFile, tempNomeStr); // Ler o nome da Rua
-			getline(graphFile, tempCompStr); // Ler o comprimento da Rua
-			int tempComp = atoi(tempCompStr.c_str());
-			Rua r1(tempNomeStr, tempComp);
-			Vertex<Rua> *v1 = new Vertex<Rua>(r1); //NODE criado
-			nodes.push_back(v1);
-			addVertex(r1); //Node adicionado ao GRAPH
-			getline(graphFile, tempDestStr);
-			while(tempDestStr != "+"){
-				int dist;
-				for(int i =0; i<nodes.size(); i++){
-					if(nodes[i]->getInfo().getNome() == tempDestStr)
-						dist = nodes[i]->getInfo().getComprimento()/2 + v1->getInfo().getComprimento()/2; //a disrtancia entre 2 edges e metade do comprimento de cada rua
-					addEdge(v1->getInfo(),nodes[i]->getInfo(), dist);
-					getline(graphFile, tempDestStr);
-				}
-			}
-		}
-		vertexSet = nodes;
-		graphFile.close();
-	}
-	else cout<<"Unable to open Graph.txt";
-
-}
-
-
-template <class T>
-void Graph<T>::loadPoIs(){
-	Rua* rua;
-	int numPois;
-	string loadStr, nomeStr, ruaStr;
-	ifstream PoisFile("PoIs.txt");
-	if (PoisFile.is_open()){
-		getline(PoisFile,loadStr); //Ler "POIS"
-		getline(PoisFile,loadStr); //Ler numPois
-		numPois = atoi(loadStr.c_str());
-		for(int i=0; i<numPois;i++){
-			getline(PoisFile,nomeStr); //Le o nome do PoI
-			getline(PoisFile, ruaStr);
-			for(int j=0;j<vertexSet.size();j++){
-				if(vertexSet[j]->getInfo().getNome == ruaStr){
-					rua = vertexSet[j]->getInfo();
-					//POI p1(nomeStr, rua);
-					//POIs.push_back(p1);
-				}
-			}
-		}
-		PoisFile.close();
-	}
-	else cout<<"Unable to open Pois.txt";
 }
 
 

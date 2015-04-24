@@ -1,9 +1,18 @@
 #include "Rua.h"
 
-
-Rua::Rua(string n, int comp){
-	this->nome = n;
+Rua::Rua(string nome, int comp, Coords coords, vector<string> connections){
+	this->nome = nome;
 	this->comprimento = comp;
+	this->coords = coords;
+}
+
+Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections){
+	this->nome = nome;
+	this->comprimento = comp;
+	Coords newCoords;
+	newCoords.latitude = lat;
+	newCoords.longitude = lon;
+	this->coords = newCoords;
 }
 
 string Rua::getNome() const{
@@ -27,3 +36,11 @@ bool Rua::operator==(const Rua& r1){
     	return true;
     else return false;
  }
+
+
+Coords Rua::getCoords(){
+	return coords;
+}
+void Rua::setCoords(Coords coords){
+	this->coords = coords;
+}
