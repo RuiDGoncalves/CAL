@@ -1,230 +1,186 @@
-//Ruas
-
 Avenida dos Aliados
+450
 41.1486516
 -8.6112400
-450 metros
-{
 Praça Filipa de Lencastre
 Rua da Fabrica
 Rua dos Clerigos
 Rua de 31 de Janeiro
 Rua de Magalhaes Lemos
-}
 
 Rua dos Clerigos 
+210
 41.1459855
 -8.6123639
-210 metros
-{
 Rua 31 de Janeiro
 Rua de Conde de Vizela
 Rua das Carmelitas
 Rua S. Filipe de Nery
-}
 
 Rua da Restauracao
+900
 41.1462074
 -8.6189889
-900 metros
-{
 Rua Dr Alberto Aires de Gouveia
 Rua Campo dos Martires da Patria
 Rua Jorge Viterbo Ferreira
 Rua Azevedo de Albuquerque
-}
 
-Rua Jorge Viterbo Ferreira 
+Rua Jorge Viterbo Ferreira
+350
 41.1468860
 -8.6247611
-350 metros
-{
 Rua D. Manuel II
 Rua da Restauracao
-}
 
 Rua D. Manuel II
+900
 41.1475970
 -8.6220306
-900 metros
-{
 Rua Dr Alberto Aires de Gouveia
 Rua Jorge Viterbo Ferreira
 Rua Dr Tiago de Almeida
-}
 
-Rua de 31 de Janeiro 
+Rua de 31 de Janeiro
+450
 41.1461428
 -8.6087751
-450 metros
-{
 Aliados
 Avenida D. Afonso Henriques
 Rua de Sá da Bandeira
-}
 
-Rua Augusto Rosa 
+Rua Augusto Rosa
+450
 41.1440266
 -8.6075305
-230 metros
-{
 Rua Alexandre Herculano
 Rua de Entreparedes
 Rua de 31 de Janeiro
 Rua do Sol
 Rua Saraiva de Carvalho
-}
 
 Rua Saraiva de Carvalho
+190
 41.1432508
 -8.6093947
-190 metros
-{
 Rua Augusto Rosa
 Avenida D. Afonso Henriques
 Rua do Sol
 Rua Chã
-}
 
-Avenida D. Afonso Henriques 
+Avenida D. Afonso Henriques
+300
 41.1442444
 -8.6106204
-300 metros
-{
 Rua Saraiva de Carvalho
 Rua Chã
 Rua 31 de Janeiro
 Aliados
-}
 
 Rua da Fabrica
+350
 41.1475730
 -8.6134904
-350 metros
-{
 Aliados
 Rua Conde de Vizela
 Rua Candido dos Reis
 Rua do Carmo
-}
 
 Rua do Carmo
+450
 41.1471731
 -8.6164489
-450 metros
-{
 Rua da Fabrica
 Rua das Carmelitas
 Rua Dr. Ferreira da Silva
 Rua Campo dos Martires da Patria
-}
 
 Rua Dr Tiago de Almeida
+230
 41.1479202
 -8.6192947
-230 metros
-{
 Rua Campo dos Martires da Patria
 Rua Dr Alberto Aires de Gouveia
 Rua D. Manuel II
-}
 
 Rua Dr Alberto Aires de Gouveia
+160
 41.1466803
 -8.6203005
-160 metros
-{
 Rua Dr Tiago de Almeida
 Rua D. Manuel II
 Rua da Restauracao
 Rua Azevedo Albuquerque
-}
 
 Rua Formosa
+220
 41.1490798
 -8.6088904
-220 metros
-{
 Aliados
 Rua de Sá da Bandeira	
-}
 
-Rua de Sá da Bandeira 
+Rua de Sá da Bandeira
+170
 41.1482918
 -8.6080831
-170 metros
-{
 Rua Formosa
 Rua Dr. Magalhaes Lemos
 Rua de Passos Manuel
-}
 
-Rua Dr Magalhaes Lemos 
+Rua Dr Magalhaes Lemos
+200
 41.1476781
 -8.6100384
-200 metros
-{
 Rua de Sá da Bandeira
 Aliados
 Rua de Passos Manuel
-}
 
 Rua Dr. Passos Manuel
+350
 41.1471731
 -8.6075708
-350 metros
-{
 Rua Dr.Magalhaes Lemos
 Rua de Entreparedes
 Rua de Sá da Bandeira
-}
 
 Rua de Ceuta
+160
 41.1483467
 -8.6136581
-160 metros
-{
 Rua D. Filipa de Lencastre
 Rua da Fabrica
-}
 
 Rua D. Filipa de Lencastre
+74
 41.1481791
 -8.6125315
-74 metros{
 Rua de Ceuta
 Aliados
-}
 
 Rua das Carmelitas
+150
 41.1463895
 -8.6144319
-150 metros
-{
 Rua Dr. Ferreira da Silva
 Rua dos Clerigos
 Rua Campo dos Martires da Patria
 Rua Conde de Vizela
 Rua Candido dos Reis
 Rua do Carmo	
-}
 
 Rua Dr. Ferreira da Silva
+150
 41.1461956
 -8.6153331
-150 metros
-{
 Rua das Carmelitas
 Rua Campo dos Martires da Patria
 Rua de S. Filipe de Nery
 Rua do Carmo
-}
 
 Rua Campo dos Martires da Patria
+190
 41.1463612
 -8.6176291
-190 metros
-{
 Rua Dr. Ferreira da Silva
 Rua das Carmelitas
 Rua da Restauracao
@@ -232,93 +188,75 @@ Rua do Carmo
 Rua Dr Tiago de Almeida
 Rua Azevedo de Albuquerque
 Rua dos Clerigos
-}
 
 Rua Azevedo de Albuquerque
+350
 41.1455209
 -8.6184605
-350 metros
-{
 Rua Campo dos Martires da Patria
 Rua da Restauracao
 Rua Dr. Alberto Aires de Gouveia
-}
 
 Rua Candido dos Reis
+160
 41.1469267
 -8.6139222
-160 metros
-{
 Rua Campo dos Martires da Patria
 Rua das Carmelitas
 Rua da Fabrica
 Rua dos Clerigos
 Rua Conde de Vizela
-}
 
 Rua Conde de Vizela
+180
 41.1468136
 -8.6135414
-180 metros
-{
 Rua Campo dos Martires da Patria
 Rua das Carmelitas
 Rua da Fabrica
 Rua dos Clerigos
 Rua Candido dos Reis
-}
 
 Rua de Entreparedes
+280
 41.1457229
 -8.6051729
-280 metros
-{
 Rua de Passos Manuel
 Rua Alexandre Herculano
 Rua de 31 de Janeiro
 Rua Augusto Rosa
 Rua do Duque de Loule
-}
 
 Rua do Duque de Loule
+370
 41.1447817
 -8.6046203
-370 metros
-{
 Rua de Entreparedes
 Rua Alexandre Herculano
 Rua do Sol
 Rua Saraiva de Carvalho
 Rua Augusto Rosa
-}
 
 Rua do Sol
+270
 41.1432143
 -8.6066266
-270 metros
-{
 Rua do Duque de Loule
 Rua Saraiva de Carvalho
 Rua Augusto Rosa
-}
 
 Rua Alexandre Herculano
+190
 41.1443979
 -8.6058971
-190 metros
-{
 Rua do Duque de Loule
 Rua de Entreparedes
 Rua Augusto Rosa
-}
 
 Rua Chã
+280
 41.1441714
 -8.6093062
-280 metros
-{
 Rua Saraiva de Carvalho
 Avenida D. Afonso Henriques
 Rua Augusto Rosa
-}
-

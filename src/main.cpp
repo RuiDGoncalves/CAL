@@ -16,9 +16,9 @@ int main() {
 
 
 	loadStreets(graph, streets);
-	/*TESTE LOADSTREETS
-	list<Rua*>::iterator it = rua.begin();
-	for(; it != rua.end(); it++){
+	//TESTE LOADSTREETS
+	list<Rua*>::iterator it = streets.begin();
+	for(; it != streets.end(); it++){
 		cout << "Nome: " << (*it)->getNome() << endl;
 		cout << "Comprimento: " << (*it)->getComprimento() << endl;
 		cout << "Latitude: " << (*it)->getCoords().latitude << endl;
@@ -26,16 +26,16 @@ int main() {
 		for(int i = 0; i < (*it)->connections.size(); i++)
 			cout << "Rua adj: " << (*it)->connections[i] << endl;
 		cout << endl;
-	}*/
+	}
 
 	loadPOIs(POIs, streets);
-	/*TESTE LOADPOIS
-	list<POI*>::iterator it = POIs.begin();
-	for(; it != POIs.end(); it++){
-		cout << "Nome POI: " << (*it)->getName() << endl;
-		cout << (*it)->getStreet()->getNome() << endl;
+	//TESTE LOADPOIS
+	list<POI*>::iterator it2 = POIs.begin();
+	for(; it2 != POIs.end(); it++){
+		cout << "Nome POI: " << (*it2)->getName() << endl;
+		cout << (*it2)->getStreet()->getNome() << endl;
 		cout << endl;
-	}*/
+	}
 
 
 	return 0;

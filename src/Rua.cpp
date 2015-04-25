@@ -50,7 +50,7 @@ void Rua::setCoords(Coord coords){
 
 void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 	ifstream streets;
-	streets.open("Ruas.txt");
+	streets.open("ruas.txt");
 	string nome;
 	int comp;
 	while(!streets.eof()){

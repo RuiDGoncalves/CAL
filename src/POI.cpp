@@ -45,7 +45,7 @@ bool POI::operator==(const POI &b){
 
 void loadPOIs(list<POI*> &vecPOI, list<Rua*> &ruas){
 	ifstream pois;
-	pois.open("POIs.txt");
+	pois.open("pois.txt");
 	string nome,nomeRua;
 	while(!pois.eof()){
 		getline(pois, nome);
