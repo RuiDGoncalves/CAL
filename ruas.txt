@@ -45,7 +45,7 @@ Rua de 31 de Janeiro
 450
 41.1461428
 -8.6087751
-Aliados
+Avenida dos Aliados
 Avenida D. Afonso Henriques
 Rua de Sá da Bandeira
 
@@ -75,13 +75,13 @@ Avenida D. Afonso Henriques
 Rua Saraiva de Carvalho
 Rua Chã
 Rua 31 de Janeiro
-Aliados
+Avenida dos Aliados
 
 Rua da Fabrica
 350
 41.1475730
 -8.6134904
-Aliados
+Avenida dos Aliados
 Rua Conde de Vizela
 Rua Candido dos Reis
 Rua do Carmo
@@ -116,7 +116,7 @@ Rua Formosa
 220
 41.1490798
 -8.6088904
-Aliados
+Avenida dos Aliados
 Rua de Sá da Bandeira	
 
 Rua de Sá da Bandeira
@@ -132,7 +132,7 @@ Rua Dr Magalhaes Lemos
 41.1476781
 -8.6100384
 Rua de Sá da Bandeira
-Aliados
+Avenida dos Aliados
 Rua de Passos Manuel
 
 Rua Dr. Passos Manuel
@@ -155,7 +155,7 @@ Rua D. Filipa de Lencastre
 41.1481791
 -8.6125315
 Rua de Ceuta
-Aliados
+Avenida dos Aliados
 
 Rua das Carmelitas
 150
