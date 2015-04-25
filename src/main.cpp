@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include "AuxiliarFunctions.h"
 #include "Graph.h"
 #include "Rua.h"
 #include "POI.h"
@@ -37,6 +38,7 @@ int main() {
 		cout << endl;
 	}
 
+	view_Graph(graph);
 
 	return 0;
 }

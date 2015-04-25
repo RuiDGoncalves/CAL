@@ -16,8 +16,6 @@
 using namespace std;
 
 
-
-
 class Rua{
 	string nome;
 	int comprimento;
@@ -25,7 +23,7 @@ class Rua{
 public:
 	vector<string> connections;
 
-	Rua(string nome, int comp, Coord coords,vector<string> connections);
+	Rua(string nome, int comp, Coord coords, vector<string> connections);
 	Rua(string nome, int comp,float lat,float lon,vector<string> connections);
 	string getNome() const;
 	void setNome(string n);
