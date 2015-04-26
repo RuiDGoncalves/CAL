@@ -2,7 +2,7 @@ Avenida dos Aliados
 450
 41.1486516
 -8.6112400
-Praça Filipa de Lencastre
+Praca Filipa de Lencastre
 Rua da Fabrica
 Rua dos Clerigos
 Rua de 31 de Janeiro
@@ -45,9 +45,9 @@ Rua de 31 de Janeiro
 450
 41.1461428
 -8.6087751
-Aliados
+Avenida dos Aliados
 Avenida D. Afonso Henriques
-Rua de Sá da Bandeira
+Rua de Sa da Bandeira
 
 Rua Augusto Rosa
 450
@@ -66,22 +66,22 @@ Rua Saraiva de Carvalho
 Rua Augusto Rosa
 Avenida D. Afonso Henriques
 Rua do Sol
-Rua Chã
+Rua Cha
 
 Avenida D. Afonso Henriques
 300
 41.1442444
 -8.6106204
 Rua Saraiva de Carvalho
-Rua Chã
+Rua Cha
 Rua 31 de Janeiro
-Aliados
+Avenida dos Aliados
 
 Rua da Fabrica
 350
 41.1475730
 -8.6134904
-Aliados
+Avenida dos Aliados
 Rua Conde de Vizela
 Rua Candido dos Reis
 Rua do Carmo
@@ -101,14 +101,14 @@ Rua Dr Tiago de Almeida
 -8.6192947
 Rua Campo dos Martires da Patria
 Rua Dr Alberto Aires de Gouveia
-Rua D. Manuel II
+Rua D Manuel II
 
 Rua Dr Alberto Aires de Gouveia
 160
 41.1466803
 -8.6203005
 Rua Dr Tiago de Almeida
-Rua D. Manuel II
+Rua D Manuel II
 Rua da Restauracao
 Rua Azevedo Albuquerque
 
@@ -116,72 +116,72 @@ Rua Formosa
 220
 41.1490798
 -8.6088904
-Aliados
-Rua de Sá da Bandeira	
+Avenida dos Aliados
+Rua de Sa da Bandeira	
 
-Rua de Sá da Bandeira
+Rua de Sa da Bandeira
 170
 41.1482918
 -8.6080831
 Rua Formosa
-Rua Dr. Magalhaes Lemos
+Rua Dr Magalhaes Lemos
 Rua de Passos Manuel
 
 Rua Dr Magalhaes Lemos
 200
 41.1476781
 -8.6100384
-Rua de Sá da Bandeira
-Aliados
+Rua de Sa da Bandeira
+Avenida dos Aliados
 Rua de Passos Manuel
 
-Rua Dr. Passos Manuel
+Rua de Passos Manuel
 350
 41.1471731
 -8.6075708
-Rua Dr.Magalhaes Lemos
+Rua Dr Magalhaes Lemos
 Rua de Entreparedes
-Rua de Sá da Bandeira
+Rua de Sa da Bandeira
 
 Rua de Ceuta
 160
 41.1483467
 -8.6136581
-Rua D. Filipa de Lencastre
+Rua D Filipa de Lencastre
 Rua da Fabrica
 
-Rua D. Filipa de Lencastre
+Rua D Filipa de Lencastre
 74
 41.1481791
 -8.6125315
 Rua de Ceuta
-Aliados
+Avenida dos Aliados
 
 Rua das Carmelitas
 150
 41.1463895
 -8.6144319
-Rua Dr. Ferreira da Silva
+Rua Dr Ferreira da Silva
 Rua dos Clerigos
 Rua Campo dos Martires da Patria
 Rua Conde de Vizela
 Rua Candido dos Reis
 Rua do Carmo	
 
-Rua Dr. Ferreira da Silva
+Rua Dr Ferreira da Silva
 150
 41.1461956
 -8.6153331
 Rua das Carmelitas
 Rua Campo dos Martires da Patria
-Rua de S. Filipe de Nery
+Rua de S Filipe de Nery
 Rua do Carmo
 
 Rua Campo dos Martires da Patria
 190
 41.1463612
 -8.6176291
-Rua Dr. Ferreira da Silva
+Rua Dr Ferreira da Silva
 Rua das Carmelitas
 Rua da Restauracao
 Rua do Carmo
@@ -195,7 +195,7 @@ Rua Azevedo de Albuquerque
 -8.6184605
 Rua Campo dos Martires da Patria
 Rua da Restauracao
-Rua Dr. Alberto Aires de Gouveia
+Rua Dr Alberto Aires de Gouveia
 
 Rua Candido dos Reis
 160
@@ -253,10 +253,10 @@ Rua do Duque de Loule
 Rua de Entreparedes
 Rua Augusto Rosa
 
-Rua Chã
+Rua Cha
 280
 41.1441714
 -8.6093062
 Rua Saraiva de Carvalho
-Avenida D. Afonso Henriques
+Avenida D Afonso Henriques
 Rua Augusto Rosa
