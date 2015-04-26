@@ -52,6 +52,7 @@ public:
 	int getDist() const;
 	void setDist(int dist);
 	int getIndegree() const;
+	vector<Edge<T> > getAdj();
 
 	Vertex* path;
 };
@@ -121,6 +122,11 @@ int Vertex<T>::getIndegree() const {
 	return this->indegree;
 }
 
+template<class T>
+vector<Edge<T> > Vertex<T>::getAdj() {
+	return this->adj;
+}
+
 /* ================================================================================================
  * Class Edge
  * ================================================================================================
@@ -133,13 +139,22 @@ public:
 	Edge(Vertex<T> *d, double w);
 	friend class Graph<T>;
 	friend class Vertex<T>;
+	Vertex<T>* getDest();
+	double getWeight();
 };
 
 template <class T>
 Edge<T>::Edge(Vertex<T> *d, double w): dest(d), weight(w){}
 
+template <class T>
+Vertex<T>* Edge<T>::getDest() {
+	return this->dest;
+}
 
-
+template <class T>
+double Edge<T>::getWeight() {
+	return this->weight;
+}
 
 
 /* ================================================================================================

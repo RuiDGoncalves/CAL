@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include "graphviewer.h"
 #include "Graph.h"
 #include "Rua.h"
 #include "POI.h"
@@ -8,7 +9,34 @@ using namespace std;
 
 
 
+void view_Graph(Graph<Rua*> graph) {
 
+	GraphViewer *gv = new GraphViewer(600, 600, true);
+	gv->createWindow(600, 600);
+	gv->defineVertexColor("blue");
+	gv->defineEdgeColor("black");
+
+	//add vertexes
+	vector<Vertex<Rua*> *> vertexes = graph.getVertexSet();
+
+	for (unsigned int i = 0; i < vertexes.size(); i++)
+		gv->addNode(i);
+
+	gv->rearrange();
+
+	//add edges
+	vector<Edge<Rua*> > edges;
+
+	for (unsigned int j = 0; j < vertexes.size(); j++) {
+		edges = vertexes[j]->getAdj();
+		for (unsigned int k = 0; k < edges.size(); k++) {
+			gv->addEdge(edges[k].getWeight(), vertexes[j]->getInfo()->getComprimento(), edges[k].getDest()->getInfo()->getComprimento(), EdgeType::UNDIRECTED);
+		}
+	}
+
+	gv->rearrange();
+
+}
 
 int main() {
 	Graph<Rua*> graph;
@@ -58,5 +86,8 @@ int main() {
 	}
 
 	cout << "123\n";
+
+
+	view_Graph(graph);
 	return 0;
 }
