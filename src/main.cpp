@@ -41,8 +41,8 @@ int main() {
 	list<pathList> organizedPOIs = organizePOI(graph, POIs);
 
 
-	//list<pathList>::iterator it = organizedPOIs.begin();
-	/*for(; it != organizedPOIs.end(); it++){
+	list<pathList>::iterator it = organizedPOIs.begin();
+	for(; it != organizedPOIs.end(); it++){
 		cout << "POI: " << it->poi->getName() << endl << endl;
 
 		list<Path>::iterator it2 = it->paths.begin();
@@ -55,7 +55,7 @@ int main() {
 			cout << endl;
 		}
 		cout << endl;
-	}*/
+	}
 
 	cout << "123\n";
 	return 0;
