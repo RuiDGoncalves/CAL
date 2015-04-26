@@ -74,7 +74,7 @@ Avenida D Afonso Henriques
 -8.6106204
 Rua Saraiva de Carvalho
 Rua Cha
-Rua 31 de Janeiro
+Rua de 31 de Janeiro
 Avenida dos Aliados
 
 Rua da Fabrica
