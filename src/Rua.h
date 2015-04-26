@@ -1,5 +1,3 @@
-#pragma once
-
 #ifndef RUA_H_
 #define RUA_H_
 
@@ -13,6 +11,7 @@
 
 #include "Graph.h"
 #include "AuxiliarFunctions.h"
+
 using namespace std;
 
 

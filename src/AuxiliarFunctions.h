@@ -11,10 +11,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Graph.h"
-#include "graphviewer.h"
-#include "Rua.h"
-#include "POI.h"
+
 
 struct Coord{
 	float longitude;
@@ -22,7 +19,7 @@ struct Coord{
 };
 
 bool sortPOI(Coord c1, Coord c2);
-void view_Graph();
+//void view_Graph();
 
 
 

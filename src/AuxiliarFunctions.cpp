@@ -14,7 +14,7 @@ bool sortPOI(Coord c1, Coord c2){
 	return c1.longitude < c2.longitude;
 }
 
-void view_Graph(Graph<Rua> graph) {
+/*void view_Graph(Graph<Rua> graph) {
 
 	GraphViewer *gv = new GraphViewer(600, 600, true);
 	gv->createWindow(600, 600);
@@ -29,4 +29,4 @@ void view_Graph(Graph<Rua> graph) {
 
 	gv->rearrange();
 
-}
+}*/
