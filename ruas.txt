@@ -15,7 +15,7 @@ Rua dos Clerigos
 Rua de 31 de Janeiro
 Rua Conde de Vizela
 Rua das Carmelitas
-Rua S. Filipe de Nery
+Rua S Filipe de Nery
 
 Rua da Restauracao
 900
@@ -30,10 +30,10 @@ Rua Jorge Viterbo Ferreira
 350
 41.1468860
 -8.6247611
-Rua D. Manuel II
+Rua D Manuel II
 Rua da Restauracao
 
-Rua D. Manuel II
+Rua D Manuel II
 900
 41.1475970
 -8.6220306
@@ -46,7 +46,7 @@ Rua de 31 de Janeiro
 41.1461428
 -8.6087751
 Avenida dos Aliados
-Avenida D. Afonso Henriques
+Avenida D Afonso Henriques
 Rua de Sa da Bandeira
 
 Rua Augusto Rosa
@@ -64,11 +64,11 @@ Rua Saraiva de Carvalho
 41.1432508
 -8.6093947
 Rua Augusto Rosa
-Avenida D. Afonso Henriques
+Avenida D Afonso Henriques
 Rua do Sol
 Rua Cha
 
-Avenida D. Afonso Henriques
+Avenida D Afonso Henriques
 300
 41.1442444
 -8.6106204
@@ -92,7 +92,7 @@ Rua do Carmo
 -8.6164489
 Rua da Fabrica
 Rua das Carmelitas
-Rua Dr. Ferreira da Silva
+Rua Dr Ferreira da Silva
 Rua Campo dos Martires da Patria
 
 Rua Dr Tiago de Almeida
@@ -174,7 +174,7 @@ Rua Dr Ferreira da Silva
 -8.6153331
 Rua das Carmelitas
 Rua Campo dos Martires da Patria
-Rua S. Filipe de Nery
+Rua S Filipe de Nery
 Rua do Carmo
 
 Rua Campo dos Martires da Patria
@@ -260,3 +260,14 @@ Rua Cha
 Rua Saraiva de Carvalho
 Avenida D Afonso Henriques
 Rua Augusto Rosa
+
+Rua S Filipe de Nery
+120
+41.1457958
+-8.6146961
+Rua Dr Ferreira da Silva
+Rua Campo dos Martires da Patria
+Rua das Carmelitas
+Rua dos Clerigos
+Rua Conde de Vizela
+Rua Candido dos Reis
