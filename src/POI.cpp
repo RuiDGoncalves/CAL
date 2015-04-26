@@ -5,10 +5,7 @@
  *      Author: duarte
  */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
+
 
 #include "POI.h"
 

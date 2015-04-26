@@ -548,7 +548,7 @@ void Graph<T>::dijkstra(Vertex<T> * s){
 	}
 	s->setDist(0);
 	vector<Vertex<T>*> q;
-	make_heap(q.begin(),q.end(),vertex_greater_than<int>());
+	make_heap(q.begin(),q.end(),vertex_greater_than<T>());
 	q.push_back(s);
 	s->queueIndex = DONE_VISITED;
 
@@ -567,10 +567,10 @@ void Graph<T>::dijkstra(Vertex<T> * s){
 				if(w->queueIndex == NOT_VISITED){
 					q.push_back(w);
 					w->queueIndex = DONE_VISITED;
-					make_heap(q.begin(),q.end(),vertex_greater_than<int>());
+					make_heap(q.begin(),q.end(),vertex_greater_than<T>());
 				}
 				else{
-					make_heap(q.begin(),q.end(),vertex_greater_than<int>());
+					make_heap(q.begin(),q.end(),vertex_greater_than<T>());
 				}
 			}
 		}

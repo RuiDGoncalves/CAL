@@ -48,7 +48,7 @@ void Rua::setCoords(Coord coords){
 }
 
 
-void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
+void loadStreets(Graph<Rua*> &graph, list<Rua*> &ruas){
 	ifstream streets;
 	streets.open("ruas.txt");
 	string nome;
@@ -72,7 +72,7 @@ void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 
 		Rua * rua = new Rua(nome, comp, coords, ruasAdj);
 		ruas.push_back(rua);
-		graph.addVertex(*rua);
+		graph.addVertex(rua);
 
 		while(!streets.eof() && streets.peek() == '\n')
 			streets.ignore();
@@ -87,7 +87,7 @@ void loadStreets(Graph<Rua> &graph, list<Rua*> &ruas){
 			list<Rua*>::iterator adj = ruas.begin();
 			for(;adj != ruas.end(); adj++)
 				if( (*adj)->getNome() == connections[i])
-					graph.addEdge(*(*it), *(*adj), ((float)(*it)->getComprimento()+(*adj)->getComprimento())/2 );
+					graph.addEdge(*it, *adj, ((float)(*it)->getComprimento()+(*adj)->getComprimento())/2 );
 		}
 	}
 }
