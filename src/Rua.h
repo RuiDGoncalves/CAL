@@ -35,7 +35,7 @@ public:
 	void setCoords(Coord coords);
 };
 
-void loadStreets(Graph<Rua*> &graph, list<Rua*> &ruas);
+void loadStreets(string filename,Graph<Rua*> &graph, list<Rua*> &ruas);
 
 
 #endif

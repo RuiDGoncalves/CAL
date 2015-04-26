@@ -35,4 +35,13 @@ list<pathList> organizePOI(Graph<Rua*> graph, list<POI*> POIs);
 
 
 
+/*
+ * Creates a graph with the POI's, where all the POIs are connected to eachother and the weight
+ * of the edges is the real distance between one POI to the other
+ *
+ *
+ */
+Graph<POI*> pathListToGraph(list<pathList> organizedPOIs);
+
+
 #endif /* PATH_H_ */

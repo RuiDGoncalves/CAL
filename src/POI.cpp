@@ -40,14 +40,14 @@ bool POI::operator==(const POI &b){
 	return false;
 }
 
-void loadPOIs(list<POI*> &vecPOI, list<Rua*> &ruas){
-	ifstream pois;
-	pois.open("pois.txt");
+void loadPOIs(string filename,list<POI*> &vecPOI, list<Rua*> &ruas){
+	ifstream file;
+	file.open(filename.c_str());
 	string nome,nomeRua;
-	while(!pois.eof()){
-		getline(pois, nome);
-		getline(pois, nomeRua);
-		pois.ignore();
+	while(!file.eof()){
+		getline(file, nome);
+		getline(file, nomeRua);
+		file.ignore();
 		list<Rua*>::iterator it = ruas.begin();
 		Rua* rua;
 		for(;it != ruas.end(); it++)
@@ -59,6 +59,8 @@ void loadPOIs(list<POI*> &vecPOI, list<Rua*> &ruas){
 		POI * poi = new POI(nome, rua);
 		vecPOI.push_back(poi);
 	}
+
+	file.close();
 
 }
 

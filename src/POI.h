@@ -32,7 +32,7 @@ public:
 	bool operator==(const POI &b);
 };
 
-void loadPOIs(list<POI*> &vecPOI, list<Rua*> &ruas);
+void loadPOIs(string filename, list<POI*> &vecPOI, list<Rua*> &ruas);
 
 
 #endif /* POI_H_ */

@@ -19,12 +19,10 @@ list<pathList> organizePOI(Graph<Rua*> graph, list<POI*> POIs){
 
 		pathList plist;
 		plist.poi = p;
-		cout << "it: " << p->getName() << endl;
 		list<POI*>::iterator it2 = POIs.begin();
 		for(; it2 != POIs.end(); it2++){
-			if(it == it2)
+			if(*it == *it2)
 				continue;
-			cout << "it2: " << (*it2)->getName() << endl;
 			POI* dest = *it2;
 			Path path;
 			path.origin = p;
@@ -33,15 +31,52 @@ list<pathList> organizePOI(Graph<Rua*> graph, list<POI*> POIs){
 
 			path.dist = v->getDist();
 			path.streets.push_front(v->getInfo());
-
-			while(v->getDist() != 0){
+			do{
 				v = v->path;
+				if(v == NULL)
+					break;
 				path.streets.push_front(v->getInfo());
-			}
+			}while(v->getDist() != 0);
 			plist.paths.push_front(path);
 		}
-		cout << "it: " << (*it)->getName() << endl;
 		organizedPOIs.push_back(plist);
 	}
 	return organizedPOIs;
+}
+
+
+
+Graph<POI*> pathListToGraph(list<pathList> organizedPOIs){
+	Graph<POI*> graph;
+	list<pathList>::iterator it = organizedPOIs.begin();
+	POI* poi = it->poi;
+	graph.addVertex(poi);
+
+	//ADD VERTEX AND EDGES FROM FIRST VERTEX TO THE OTHER VERTEX'S
+	for(list<Path>::iterator path = it->paths.begin(); path != it->paths.end(); path++){
+		POI* dest = path->dest;
+		if (dest == poi)
+			continue;
+		graph.addVertex(dest);
+		graph.addEdge(poi, dest, path->dist);
+	}
+
+	it++;	//Increment pointer
+
+	//ADD EDGES FOR ALL THE OTHER VERTEXES
+	for(; it != organizedPOIs.end(); it++){
+		POI* poi = it->poi;
+
+		if(graph.getVertex(poi) == NULL)
+			graph.addVertex(poi);
+
+		for(list<Path>::iterator path = it->paths.begin(); path != it->paths.end(); path++){
+				POI* dest = path->dest;
+				if (dest == poi)
+					continue;
+				graph.addEdge(poi, dest, path->dist);
+		}
+	}
+
+	return graph;
 }

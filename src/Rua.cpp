@@ -48,25 +48,25 @@ void Rua::setCoords(Coord coords){
 }
 
 
-void loadStreets(Graph<Rua*> &graph, list<Rua*> &ruas){
-	ifstream streets;
-	streets.open("ruas.txt");
+void loadStreets(string filename,Graph<Rua*> &graph, list<Rua*> &ruas){
+	ifstream file;
+	file.open(filename.c_str());
 	string nome;
 	int comp;
-	while(!streets.eof()){
-		getline(streets, nome);
+	while(!file.eof()){
+		getline(file, nome);
 //		cout << "Vai buscar a rua: " << nome << endl;
-		streets >> comp;
-		streets.ignore();
+		file >> comp;
+		file.ignore();
 		Coord coords;
-		streets >> coords.latitude;
-		streets >> coords.longitude;
-		streets.ignore();
+		file >> coords.latitude;
+		file >> coords.longitude;
+		file.ignore();
 		vector<string> ruasAdj;
 
-		while(!streets.eof() && (char) streets.peek() != '\n'){
+		while(!file.eof() && (char) file.peek() != '\n'){
 			string adjacentStreet;
-			getline(streets,adjacentStreet);
+			getline(file,adjacentStreet);
 			ruasAdj.push_back(adjacentStreet);
 		}
 
@@ -74,11 +74,13 @@ void loadStreets(Graph<Rua*> &graph, list<Rua*> &ruas){
 		ruas.push_back(rua);
 		graph.addVertex(rua);
 
-		while(!streets.eof() && streets.peek() == '\n')
-			streets.ignore();
+		while(!file.eof() && file.peek() == '\n')
+			file.ignore();
 
 
 	}
+
+	file.close();
 
 	list<Rua*>::iterator it = ruas.begin();
 	for(;it != ruas.end(); it++){
