@@ -6,14 +6,14 @@ Praca Filipa de Lencastre
 Rua da Fabrica
 Rua dos Clerigos
 Rua de 31 de Janeiro
-Rua de Magalhaes Lemos
+Rua Dr Magalhaes Lemos
 
-Rua dos Clerigos 
+Rua dos Clerigos
 210
 41.1459855
 -8.6123639
-Rua 31 de Janeiro
-Rua de Conde de Vizela
+Rua de 31 de Janeiro
+Rua Conde de Vizela
 Rua das Carmelitas
 Rua S. Filipe de Nery
 
@@ -117,7 +117,7 @@ Rua Formosa
 41.1490798
 -8.6088904
 Avenida dos Aliados
-Rua de Sa da Bandeira	
+Rua de Sa da Bandeira
 
 Rua de Sa da Bandeira
 170
@@ -147,10 +147,10 @@ Rua de Ceuta
 160
 41.1483467
 -8.6136581
-Rua D Filipa de Lencastre
+Praca Filipa de Lencastre
 Rua da Fabrica
 
-Rua D Filipa de Lencastre
+Praca Filipa de Lencastre
 74
 41.1481791
 -8.6125315
@@ -166,7 +166,7 @@ Rua dos Clerigos
 Rua Campo dos Martires da Patria
 Rua Conde de Vizela
 Rua Candido dos Reis
-Rua do Carmo	
+Rua do Carmo
 
 Rua Dr Ferreira da Silva
 150
@@ -174,7 +174,7 @@ Rua Dr Ferreira da Silva
 -8.6153331
 Rua das Carmelitas
 Rua Campo dos Martires da Patria
-Rua de S Filipe de Nery
+Rua S. Filipe de Nery
 Rua do Carmo
 
 Rua Campo dos Martires da Patria

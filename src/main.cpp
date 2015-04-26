@@ -43,7 +43,8 @@ int main() {
 	list<Rua*> streets;
 	list<POI*> POIs;
 
-	loadStreets(graph, streets);
+	string streetFilename = "ruas.txt";
+	loadStreets(streetFilename, graph, streets);
 	/*//TESTE LOADSTREETS
 	list<Rua*>::iterator it = streets.begin();
 	for(; it != streets.end(); it++){
@@ -56,7 +57,8 @@ int main() {
 		cout << endl;
 	}*/
 
-	loadPOIs(POIs, streets);
+	string poiFilename = "pois.txt";
+	loadPOIs(poiFilename, POIs, streets);
 	/*//TESTE LOADPOIS
 	list<POI*>::iterator it2 = POIs.begin();
 	for(; it2 != POIs.end(); it2++){
@@ -65,10 +67,9 @@ int main() {
 		cout << endl;
 	}*/
 
-	cout << POIs.size() << endl;
 	list<pathList> organizedPOIs = organizePOI(graph, POIs);
 
-
+	//TESTE ORGANIZEDPOIS
 	list<pathList>::iterator it = organizedPOIs.begin();
 	for(; it != organizedPOIs.end(); it++){
 		cout << "POI: " << it->poi->getName() << endl << endl;
@@ -85,9 +86,8 @@ int main() {
 		cout << endl;
 	}
 
-	cout << "123\n";
+	Graph<POI*> poiGraph = pathListToGraph(organizedPOIs);
 
-
-	view_Graph(graph);
+	//view_Graph(graph);
 	return 0;
 }

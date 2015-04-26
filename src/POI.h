@@ -17,7 +17,6 @@
 
 #include "Rua.h"
 
-class ExceptionStreetNotFound{};
 
 class POI{
 private:

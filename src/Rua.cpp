@@ -87,9 +87,18 @@ void loadStreets(string filename,Graph<Rua*> &graph, list<Rua*> &ruas){
 		vector<string> connections = (*it)->connections;
 		for(unsigned int i = 0; i < connections.size(); i++){
 			list<Rua*>::iterator adj = ruas.begin();
-			for(;adj != ruas.end(); adj++)
-				if( (*adj)->getNome() == connections[i])
+			bool success = false;
+			for(;adj != ruas.end(); adj++){
+				if( (*adj)->getNome() == connections[i]){
+					success = true;
 					graph.addEdge(*it, *adj, ((float)(*it)->getComprimento()+(*adj)->getComprimento())/2 );
+					break;
+				}
+			}
+			if ( ! success){
+				cout << connections[i] << endl;
+				throw ExceptionStreetNotFound();
+			}
 		}
 	}
 }
