@@ -96,7 +96,9 @@ void loadStreets(string filename,Graph<Rua*> &graph, list<Rua*> &ruas){
 				}
 			}
 			if ( ! success){
+				cout << (*it)->getNome() << endl;
 				cout << connections[i] << endl;
+				//usleep(pow(2,6));
 				throw ExceptionStreetNotFound();
 			}
 		}

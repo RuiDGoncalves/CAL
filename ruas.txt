@@ -182,7 +182,7 @@ Rua das Carmelitas
 Rua Campo dos Martires da Patria
 Rua S Filipe de Nery
 Rua do Carmo
-Rua de S Bento da Vitoria
+Rua S Bento da Vitoria
 
 Rua Campo dos Martires da Patria
 190
@@ -195,7 +195,7 @@ Rua do Carmo
 Rua Dr Tiago de Almeida
 Rua Azevedo de Albuquerque
 Rua dos Clerigos
-Rua de S Bento da Vitoria
+Rua S Bento da Vitoria
 Travessa de S Bento
 Rua Dr Barbosa de Castro
 
@@ -285,10 +285,10 @@ Rua das Carmelitas
 Rua dos Clerigos
 Rua Conde de Vizela
 Rua Candido dos Reis
-Rua de S Bento da Vitoria
+Rua S Bento da Vitoria
 Rua Arquiteto Nicolau Nasoni
 
-Rua de S Bento da Vitoria
+Rua S Bento da Vitoria
 240
 41.1442918
 -8.6155879
@@ -319,7 +319,7 @@ Rua Mouzinho da Silveira
 Avenida D Afonso Henriques
 Rua Trindade Coelho
 Rua Ponte Nova
-Rua da Bainhaira
+Rua da Bainharia
 
 Rua de Tras
 350
@@ -375,7 +375,7 @@ Rua Ferraz
 Rua das Flores
 Rua Mouzinho da Silveira
 
-Rua da Bainhaira
+Rua da Bainharia
 350
 41.1430877
 -8.6131433
@@ -384,6 +384,7 @@ Rua Mouzinho da Silveira
 Rua das Flores
 Rua de Belmonte
 Avenida D Afonso Henriques
+
 Rua Arquiteto Nicolau Nasoni
 65
 41.1455895
@@ -399,7 +400,7 @@ Travessa de S Bento
 130
 41.1444543
 -8.6163876
-Rua de S Bento da Vitoria
+Rua S Bento da Vitoria
 Rua Campo dos Martires da Patria
 Rua Azevedo de Albuquerque
 Rua Dr Barbosa de Castro
