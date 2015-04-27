@@ -43,6 +43,9 @@ Rua D Manuel II
 Rua Dr Alberto Aires de Gouveia
 Rua Jorge Viterbo Ferreira
 Rua Dr Tiago de Almeida
+Rua Adolfo Casais Monteiro
+Rua do Rosario
+Rua Boa Nova
 
 Rua de 31 de Janeiro
 450
@@ -79,8 +82,8 @@ Rua Saraiva de Carvalho
 Rua Cha
 Rua de 31 de Janeiro
 Avenida dos Aliados
-Rua da Bainharia
 Rua Mouzinho da Silveira
+Travessa de S Sebastiao
 
 Rua da Fabrica
 350
@@ -107,6 +110,8 @@ Rua Dr Tiago de Almeida
 Rua Campo dos Martires da Patria
 Rua Dr Alberto Aires de Gouveia
 Rua D Manuel II
+Travessa Carregal
+Rua do Rosario
 
 Rua Dr Alberto Aires de Gouveia
 160
@@ -116,6 +121,7 @@ Rua Dr Tiago de Almeida
 Rua D Manuel II
 Rua da Restauracao
 Rua Azevedo de Albuquerque
+Rua do Rosario
 
 Rua Formosa
 220
@@ -381,7 +387,8 @@ Rua da Bainharia
 Rua Mouzinho da Silveira
 Rua das Flores
 Rua de Belmonte
-Avenida D Afonso Henriques
+Travessa de S Sebastiao
+
 
 Rua Arquiteto Nicolau Nasoni
 65
@@ -466,3 +473,81 @@ Rua de Belmonte
 Rua Virtudes
 Passeio das Virtudes
 Rua Dr Barbosa de Castro
+
+Travessa de S Sebastiao
+200
+41.1442156
+-8.6113347
+Rua da Bainharia
+Avenida D Afonso Henriques
+
+Rua Adolfo Casais Monteiro
+300
+41.1492117
+-8.6229066
+Rua D Manuel II
+Rua de Miguel Bombarda
+Rua do Breiner
+Rua da Maternidade
+Rua Boa Nova
+
+Rua de Miguel Bombarda
+750
+41.1496156
+-8.6209647
+Rua Boa Nova
+Rua Adolfo Casais Monteiro
+Rua do Rosario
+Rua Diogo Brandao
+Rua Boa Nova
+
+Rua Diogo Brandao
+100
+41.1496156
+-8.6176709
+Travessa Carregal
+Rua de Miguel Bombarda
+
+Travessa Carregal
+130
+41.1487108
+-8.6178748
+Rua Dr Tiago de Almeida
+Rua Diogo Brandao
+
+Rua do Rosario
+500
+41.1498176
+-8.6208681
+Rua Dr Tiago de Almeida
+Rua Dr Alberto Aires de Gouveia
+Rua D Manuel II
+Rua de Miguel Bombarda
+Rua do Breiner
+Rua da Maternidade
+
+Rua do Breiner
+250
+41.1507208
+-8.6207946
+Rua Boa Nova
+Rua Adolfo Casais Monteiro
+Rua do Rosario
+
+Rua da Maternidade
+220
+41.1510625
+-8.6224659
+Rua Boa Nova
+Rua Adolfo Casais Monteiro
+Rua do Rosario
+Rua do Breiner
+
+Rua Boa Nova
+250
+41.1497042
+-8.6242952
+Rua de Miguel Bombarda
+Rua D Manuel II
+Rua do Breiner
+Rua da Maternidade
