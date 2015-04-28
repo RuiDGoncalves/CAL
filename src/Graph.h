@@ -93,6 +93,7 @@ template <class T>
 void Vertex<T>::addEdge(Vertex<T> *dest, double w) {
 	Edge<T> edgeD(dest,w);
 	adj.push_back(edgeD);
+	sort(this->adj.begin(), this->adj.end());
 }
 
 
@@ -141,6 +142,7 @@ public:
 	friend class Vertex<T>;
 	Vertex<T>* getDest();
 	double getWeight();
+	bool operator<(const Edge<T> &b) const;
 };
 
 template <class T>
@@ -156,6 +158,10 @@ double Edge<T>::getWeight() {
 	return this->weight;
 }
 
+template <class T>
+bool Edge<T>::operator<(const Edge<T> &b) const{
+	return weight < b.weight;
+}
 
 /* ================================================================================================
  * Class Graph
@@ -194,6 +200,9 @@ public:
 	bool isDAG();
 	void dijkstraShortestPath(const T &s);
 	void dijkstra(Vertex<T> * s);
+
+	list<T> branchAndBoundSmallestCircuit();
+	void branchAndBound(list<Vertex<T>*> &best, int &bestDist, list<Vertex<T>*> &current, int dist);
 };
 
 
@@ -593,5 +602,50 @@ void Graph<T>::dijkstra(Vertex<T> * s){
 
 }
 
+template <class T>
+list<T> Graph<T>::branchAndBoundSmallestCircuit(){
+
+	list<Vertex<T>*> best;
+	int bestDist = INT_INFINITY;
+
+	for(unsigned int i = 0; i < vertexSet.size(); i++){
+		list<Vertex<T>*> newPath;
+		newPath.push_back(vertexSet[i]);
+		branchAndBound(best, bestDist, newPath, 0);
+	}
+
+
+	list<Vertex<T>*> retList;
+	typename list<Vertex<T>*>::iterator it = best.begin();
+	for(; it != best.end(); it++)
+		retList.push_back((*it)->info);
+
+	return best;
+}
+
+template <class T>
+void Graph<T>::branchAndBound(list<Vertex<T>*> &best, int &bestDist, list<Vertex<T>*> &current, int dist){
+	Vertex<T> * v = *current.end();
+	v->visited = true;
+	bool allVisited = true;
+	for(unsigned int i = 0; i < v->adj.size(); i++){
+		if(v->adj[i].dest->visited)
+			continue;
+		allVisited = false;
+		if(v->adj[i].weight + dist > bestDist)
+			break;	//Como tem que passar por todos os pontos, se o caminho de um ponto para o outro já ultrapassa a distância, então não vale a pena continuar
+
+		current.push_back(v->adj[i].dest);
+		branchAndBound(best, bestDist, current, v->adj[i].weight + dist);
+	}
+
+	if(allVisited){
+		best = current;
+		bestDist = dist;
+	}
+
+	v->visited = false;
+	current.pop_back();
+}
 
 #endif /* GRAPH_H_ */

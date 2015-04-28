@@ -88,6 +88,6 @@ int main() {
 
 	Graph<POI*> poiGraph = pathListToGraph(organizedPOIs);
 
-	//view_Graph(graph);
+	view_Graph(graph);
 	return 0;
 }
