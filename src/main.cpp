@@ -10,17 +10,21 @@ using namespace std;
 
 
 void view_Graph(Graph<Rua*> graph) {
-
-	GraphViewer *gv = new GraphViewer(600, 600, true);
+	unsigned idE = 0;
+	unsigned idV = 0;
+	GraphViewer *gv = new GraphViewer(3000, 3000, true);
 	gv->createWindow(600, 600);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
 
+
 	//add vertexes
 	vector<Vertex<Rua*> *> vertexes = graph.getVertexSet();
 
-	for (unsigned int i = 0; i < vertexes.size(); i++)
-		gv->addNode(i);
+	for (unsigned int i = 0; i < vertexes.size(); i++){
+		gv->addNode(i, vertexes[i]->getInfo()->getCoords().longitude * 3000,  vertexes[i]->getInfo()->getCoords().latitude * 3000);
+		gv->setVertexLabel(i,vertexes[i]->getInfo()->getNome());
+	}
 
 	gv->rearrange();
 
@@ -30,7 +34,8 @@ void view_Graph(Graph<Rua*> graph) {
 	for (unsigned int j = 0; j < vertexes.size(); j++) {
 		edges = vertexes[j]->getAdj();
 		for (unsigned int k = 0; k < edges.size(); k++) {
-			gv->addEdge(edges[k].getWeight(), vertexes[j]->getInfo()->getComprimento(), edges[k].getDest()->getInfo()->getComprimento(), EdgeType::UNDIRECTED);
+			gv->addEdge(idE++, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
+			//gv->addEdge(edges[k].getWeight(), vertexes[j]->getInfo()->getComprimento(), edges[k].getDest()->getInfo()->getComprimento(), EdgeType::UNDIRECTED);
 		}
 	}
 
@@ -89,5 +94,6 @@ int main() {
 	Graph<POI*> poiGraph = pathListToGraph(organizedPOIs);
 
 	view_Graph(graph);
+	while(true){}
 	return 0;
 }

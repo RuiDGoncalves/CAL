@@ -1,13 +1,14 @@
 #include "Rua.h"
 
-Rua::Rua(string nome, int comp, Coord coords, vector<string> connections){
+Rua::Rua(string nome, int comp, Coord coords, vector<string> connections, unsigned id){
 	this->nome = nome;
 	this->comprimento = comp;
 	this->coords = coords;
 	this->connections = connections;
+	this->id = id;
 }
 
-Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections){
+Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections, unsigned id){
 	this->nome = nome;
 	this->comprimento = comp;
 	Coord newCoords;
@@ -15,6 +16,7 @@ Rua::Rua(string nome, int comp, float lat, float lon, vector<string> connections
 	newCoords.longitude = lon;
 	this->coords = newCoords;
 	this->connections = connections;
+	this->id = id;
 }
 
 string Rua::getNome() const{
@@ -53,6 +55,7 @@ void loadStreets(string filename,Graph<Rua*> &graph, list<Rua*> &ruas){
 	file.open(filename.c_str());
 	string nome;
 	int comp;
+	unsigned id = 0;
 	while(!file.eof()){
 		getline(file, nome);
 //		cout << "Vai buscar a rua: " << nome << endl;
@@ -70,7 +73,7 @@ void loadStreets(string filename,Graph<Rua*> &graph, list<Rua*> &ruas){
 			ruasAdj.push_back(adjacentStreet);
 		}
 
-		Rua * rua = new Rua(nome, comp, coords, ruasAdj);
+		Rua * rua = new Rua(nome, comp, coords, ruasAdj, id++);
 		ruas.push_back(rua);
 		graph.addVertex(rua);
 
