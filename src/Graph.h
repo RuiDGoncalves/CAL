@@ -177,6 +177,7 @@ class Graph {
 	void dfsVisit(Vertex<T> *v);
 	void dfsVisit();
 	void getPathTo(Vertex<T> *origin, list<T> &res);
+	void branchAndBound(list<Vertex<T>*> &best, int &bestDist, list<Vertex<T>*> &current, int dist);
 
 public:
 	bool addVertex(const T &in);
@@ -202,7 +203,6 @@ public:
 	void dijkstra(Vertex<T> * s);
 
 	list<T> branchAndBoundSmallestCircuit();
-	void branchAndBound(list<Vertex<T>*> &best, int &bestDist, list<Vertex<T>*> &current, int dist);
 };
 
 
@@ -608,6 +608,9 @@ list<T> Graph<T>::branchAndBoundSmallestCircuit(){
 	list<Vertex<T>*> best;
 	int bestDist = INT_INFINITY;
 
+	for(unsigned int i = 0; i < vertexSet.size(); i++)
+		vertexSet[i]->visited = false;
+
 	for(unsigned int i = 0; i < vertexSet.size(); i++){
 		list<Vertex<T>*> newPath;
 		newPath.push_back(vertexSet[i]);
@@ -615,17 +618,17 @@ list<T> Graph<T>::branchAndBoundSmallestCircuit(){
 	}
 
 
-	list<Vertex<T>*> retList;
+	list<T> retList;
 	typename list<Vertex<T>*>::iterator it = best.begin();
 	for(; it != best.end(); it++)
 		retList.push_back((*it)->info);
 
-	return best;
+	return retList;
 }
 
 template <class T>
 void Graph<T>::branchAndBound(list<Vertex<T>*> &best, int &bestDist, list<Vertex<T>*> &current, int dist){
-	Vertex<T> * v = *current.end();
+	Vertex<T> * v = current.back();
 	v->visited = true;
 	bool allVisited = true;
 	for(unsigned int i = 0; i < v->adj.size(); i++){
@@ -638,12 +641,10 @@ void Graph<T>::branchAndBound(list<Vertex<T>*> &best, int &bestDist, list<Vertex
 		current.push_back(v->adj[i].dest);
 		branchAndBound(best, bestDist, current, v->adj[i].weight + dist);
 	}
-
 	if(allVisited){
 		best = current;
 		bestDist = dist;
 	}
-
 	v->visited = false;
 	current.pop_back();
 }
