@@ -45,6 +45,7 @@ bool Rua::operator==(const Rua& r1){
 Coord Rua::getCoords(){
 	return coords;
 }
+
 void Rua::setCoords(Coord coords){
 	this->coords = coords;
 }

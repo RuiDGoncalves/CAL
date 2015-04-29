@@ -7,12 +7,25 @@
 #include "Path.h"
 using namespace std;
 
+float convert_coordinates_y(float coordinate)
+{
+	float y_limit = 41.140;
+	cout << "Returning y " << (y_limit - coordinate) * 100000 << endl;
+	return - (coordinate - y_limit) * 100000;
+}
 
+float convert_coordinates_x(float coordinate)
+{
+	float x_limit = -8.61124;
+	cout << "Returning x " << (x_limit - coordinate) * 100000 << endl;
+	return - (x_limit - coordinate) * 100000;
+}
 
 void view_Graph(Graph<Rua*> graph) {
 	unsigned idE = 0;
 	unsigned idV = 0;
-	GraphViewer *gv = new GraphViewer(3000, 3000, true);
+	float window_size = 3000;
+	GraphViewer *gv = new GraphViewer(600, 600, false);
 	gv->createWindow(600, 600);
 	gv->defineVertexColor("blue");
 	gv->defineEdgeColor("black");
@@ -22,8 +35,10 @@ void view_Graph(Graph<Rua*> graph) {
 	vector<Vertex<Rua*> *> vertexes = graph.getVertexSet();
 
 	for (unsigned int i = 0; i < vertexes.size(); i++){
-		gv->addNode(i, vertexes[i]->getInfo()->getCoords().longitude * 3000,  vertexes[i]->getInfo()->getCoords().latitude * 3000);
+		gv->addNode(i, convert_coordinates_x(vertexes[i]->getInfo()->getCoords().longitude), convert_coordinates_y(vertexes[i]->getInfo()->getCoords().latitude));
 		gv->setVertexLabel(i,vertexes[i]->getInfo()->getNome());
+		cout << vertexes[i]->getInfo()->getCoords().longitude << endl;
+		cout << vertexes[i]->getInfo()->getCoords().latitude << endl<<endl;
 	}
 
 	gv->rearrange();
@@ -35,10 +50,10 @@ void view_Graph(Graph<Rua*> graph) {
 		edges = vertexes[j]->getAdj();
 		for (unsigned int k = 0; k < edges.size(); k++) {
 			gv->addEdge(idE++, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
+			cout << idE;
 			//gv->addEdge(edges[k].getWeight(), vertexes[j]->getInfo()->getComprimento(), edges[k].getDest()->getInfo()->getComprimento(), EdgeType::UNDIRECTED);
 		}
 	}
-
 	gv->rearrange();
 
 }
