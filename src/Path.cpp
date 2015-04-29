@@ -80,3 +80,53 @@ Graph<POI*> pathListToGraph(list<pathList> organizedPOIs){
 
 	return graph;
 }
+
+
+Graph<Rua*> graphicalPath(list<pathList> organizedPOIs, list<POI*> orderedPOIs){
+	list<Rua*> orderedCircuit;
+
+	list<POI*>::iterator it = orderedPOIs.begin();
+
+
+	POI* origin;
+	POI* dest = *it;
+	orderedCircuit.push_back(dest->getStreet());
+
+	it++;
+	for(; it != orderedPOIs.end(); it++){
+		origin = dest;
+		dest = *it;
+		list<pathList>::iterator orgListIt = organizedPOIs.begin();
+
+		for(; orgListIt != organizedPOIs.end(); orgListIt++){
+			if(orgListIt->poi == origin){
+				list<Path>::iterator pathListIt = orgListIt->paths.begin();
+				for(; pathListIt != orgListIt->paths.end(); pathListIt++){
+					if(pathListIt->dest != dest)
+						continue;
+					list<Rua*> path = pathListIt->streets;
+					path.pop_front();
+					orderedCircuit.insert(orderedCircuit.end(), path.begin(), path.end());
+				}
+				break;
+			}
+		}
+	}
+
+	Graph<Rua*>retGraph;
+	list<Rua*>::iterator circuitIt = orderedCircuit.begin();
+	Rua* previousStreet;
+	Rua* currentStreet = *circuitIt;
+	retGraph.addVertex(currentStreet);
+	circuitIt++;
+	for(; circuitIt != orderedCircuit.end(); circuitIt++){
+		previousStreet = currentStreet;
+		currentStreet = *circuitIt;
+//		cout << "Previous street: " << previousStreet->getNome() << endl;
+//		cout << "Current Street: " << currentStreet->getNome() << endl << endl;
+		retGraph.addVertex(currentStreet);
+		retGraph.addEdge(previousStreet, currentStreet, ((double) previousStreet->getComprimento() + currentStreet->getComprimento())/2 );
+	}
+
+	return retGraph;
+}

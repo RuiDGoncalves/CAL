@@ -44,4 +44,10 @@ list<pathList> organizePOI(Graph<Rua*> graph, list<POI*> POIs);
 Graph<POI*> pathListToGraph(list<pathList> organizedPOIs);
 
 
+/*
+ * Creates a graph with the circuit that the bus is supposed to travel;
+ *
+ */
+Graph<Rua*> graphicalPath(list<pathList> organizedPOIs, list<POI*> orderedPOIs);
+
 #endif /* PATH_H_ */

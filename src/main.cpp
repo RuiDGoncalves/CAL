@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <ctime>
+
 #include "graphviewer.h"
 #include "Graph.h"
 #include "Rua.h"
@@ -55,6 +57,8 @@ void view_Graph(Graph<Rua*> graph) {
 }
 
 int main() {
+	time_t initTime;
+	time(&initTime);
 	Graph<Rua*> graph;
 	list<Rua*> streets;
 	list<POI*> POIs;
@@ -84,8 +88,7 @@ int main() {
 	}*/
 
 	list<pathList> organizedPOIs = organizePOI(graph, POIs);
-
-	//TESTE ORGANIZEDPOIS
+/*	//TESTE ORGANIZEDPOIS
 	list<pathList>::iterator it = organizedPOIs.begin();
 	for(; it != organizedPOIs.end(); it++){
 		cout << "POI: " << it->poi->getName() << endl << endl;
@@ -100,11 +103,26 @@ int main() {
 			cout << endl;
 		}
 		cout << endl;
-	}
+	}*/
 
 	Graph<POI*> poiGraph = pathListToGraph(organizedPOIs);
+	list<POI*> orderedPOIs = poiGraph.branchAndBoundSmallestCircuit();
+/*	//TESTE BRANCHANDBOUND
+	list<POI*>::iterator it = orderedPOIs.begin();
+	for(;it != orderedPOIs.end(); it++){
+		cout << "POI: " << (*it)->getName() << endl;
+	}
+	cout << endl;*/
 
+
+	Graph<Rua*> orderedCircuit = graphicalPath(organizedPOIs, orderedPOIs);
+
+	time_t endTime;
+	time(&endTime);
+	double duration = difftime(endTime, initTime);
+	cout << duration << endl;
 	view_Graph(graph);
+	//view_Graph(orderedCircuit);
 	while(true){}
 	return 0;
 }
