@@ -111,15 +111,19 @@ void view_circuit(Graph<Rua*> graph, list<pathList> organizedPOIs)
 	gv->rearrange();
 	//add edges
 	vector<Edge<Rua*> > edges;
+	vector<Rua *> temp;
 
 	for (unsigned int j = 0; j < vertexes.size(); j++) {
 		edges = vertexes[j]->getAdj();
 		for (unsigned int k = 0; k < edges.size(); k++) {
-			if(paint_edge(organizedPOIs, edges[k].getDest()->getInfo())){
-				gv->addEdge(idE, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
-				gv->setEdgeColor(idE++,"green");
-				//idE++;
-			}
+
+				if(paint_edge(organizedPOIs, edges[k].getDest()->getInfo())){
+					gv->addEdge(idE, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
+					gv->setEdgeColor(idE++,"green");
+					temp.push_back(edges[k].getDest()->getInfo());
+					//idE++;
+				}
+
 			else
 				gv->addEdge(idE++, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
 		}
