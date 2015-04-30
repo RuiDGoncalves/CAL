@@ -2,6 +2,7 @@
 #include <fstream>
 #include <ctime>
 
+
 #include "graphviewer.h"
 #include "Graph.h"
 #include "Rua.h"
@@ -130,6 +131,18 @@ void view_circuit(Graph<Rua*> graph, list<pathList> organizedPOIs)
 
 }
 
+void savePath(string filename, list<Rua*> streetPath){
+	ofstream file;
+	file.open(filename.c_str());
+
+	list<Rua*>::iterator it = streetPath.begin();
+
+	file << (*it)->getNome();
+	it++;
+
+	for(; it != streetPath.end(); it++)
+		file << endl << (*it)->getNome();
+}
 
 int main() {
 	time_t initTime;
@@ -189,8 +202,11 @@ int main() {
 	}
 	cout << endl;*/
 
+	list<Rua*> path = streetPath(organizedPOIs,orderedPOIs);
 
-	Graph<Rua*> orderedCircuit = graphicalPath(organizedPOIs, orderedPOIs);
+	savePath("path.txt",path);
+
+	Graph<Rua*> orderedCircuit = graphicalPath(path);
 
 	time_t endTime;
 	time(&endTime);
