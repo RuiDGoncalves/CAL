@@ -33,6 +33,7 @@ void view_Graph(Graph<Rua*> graph) {
 	gv->defineEdgeColor("black");
 
 
+
 	//add vertexes
 	vector<Vertex<Rua*> *> vertexes = graph.getVertexSet();
 
@@ -55,6 +56,95 @@ void view_Graph(Graph<Rua*> graph) {
 	gv->rearrange();
 
 }
+
+bool paint_edge(list<pathList> organised_POIs, Rua* rua){
+	list<pathList>::iterator prim_it =organised_POIs.begin();
+	list<Path>::iterator it;
+	list<Rua *>::iterator iterB;
+	list<Rua *>::iterator iterE;
+	list<Rua *>::iterator check;
+
+	for(prim_it; prim_it != organised_POIs.end();prim_it++){
+		it = prim_it->paths.begin();
+		for(it; it!= prim_it->paths.end(); it++){
+			iterB = it->streets.begin();
+			iterE = it->streets.end();
+			for(;iterB!=iterE;iterB++)
+				check = find(iterB,iterE, rua);
+			if(check!=iterE)
+				return true;
+		}
+	}
+	return false;
+}
+
+void view_circuit(Graph<Rua*> graph, list<pathList> organizedPOIs)
+{
+	unsigned idE = 0;
+	unsigned idV = 0;
+	float window_size = 3000;
+
+	vector<string> POIs_name;
+	GraphViewer *gv = new GraphViewer(600, 600, false);
+	gv->createWindow(600, 600);
+	gv->defineVertexColor("blue");
+	gv->defineEdgeColor("black");
+
+
+
+	//add vertexes
+	vector<Vertex<Rua*> *> vertexes = graph.getVertexSet();
+
+	for (unsigned int i = 0; i < vertexes.size(); i++){
+		gv->addNode(i, convert_coordinates_x(vertexes[i]->getInfo()->getCoords().longitude), convert_coordinates_y(vertexes[i]->getInfo()->getCoords().latitude));
+		gv->setVertexLabel(i,vertexes[i]->getInfo()->getNome());
+	}
+
+	for (unsigned int i = 0; i < vertexes.size(); i++){
+		for(list<pathList>::iterator it = organizedPOIs.begin(); it!= organizedPOIs.end();it++){
+			if(it->poi->getStreet()->getNome() == vertexes[i]->getInfo()->getNome()){
+				gv->setVertexColor(vertexes[i]->getInfo()->getId(), "green");
+			}
+		}
+	}
+	gv->rearrange();
+	//add edges
+	vector<Edge<Rua*> > edges;
+
+	for (unsigned int j = 0; j < vertexes.size(); j++) {
+		edges = vertexes[j]->getAdj();
+		for (unsigned int k = 0; k < edges.size(); k++) {
+			if(paint_edge(organizedPOIs, vertexes[j]->getInfo())){
+				gv->addEdge(idE, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
+				gv->setEdgeColor(idE++,"green");
+			}
+			else
+				gv->addEdge(idE++, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
+		}
+	}
+
+	/*vector<Edge<Rua*> > edges_paint;
+	for (unsigned int j = 0; j < vertexes.size(); j++) {
+		edges_paint = vertexes[j]->getAdj();
+		for (unsigned int k = 0; k < edges.size(); k++) {
+			for(list<pathList>::iterator it = organizedPOIs.begin(); it!= organizedPOIs.end();it++){
+				for(list<Path>::iterator iter = it->paths.begin(); iter!= it->paths.end();it++){
+					list<Rua*>::iterator check;
+					check = find(iter->streets.begin(),iter->streets.end(), vertexes[j]->getInfo());
+					if(check != iter->streets.end())
+						gv->setEdgeColor()
+
+				}
+			}
+		}
+	}
+*/
+	gv->rearrange();
+
+
+
+}
+
 
 int main() {
 	time_t initTime;
@@ -121,8 +211,9 @@ int main() {
 	time(&endTime);
 	double duration = difftime(endTime, initTime);
 	cout << duration << endl;
-	view_Graph(graph);
-	//view_Graph(orderedCircuit);
+	//view_Graph(graph);
+
+	view_circuit(graph, organizedPOIs);
 	while(true){}
 	return 0;
 }

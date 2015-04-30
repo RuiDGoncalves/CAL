@@ -28,7 +28,6 @@ list<pathList> organizePOI(Graph<Rua*> graph, list<POI*> POIs){
 			path.origin = p;
 			path.dest = dest;
 			Vertex<Rua*> * v = graph.getVertex(dest->getStreet());
-
 			path.dist = v->getDist();
 			path.streets.push_front(v->getInfo());
 			do{
