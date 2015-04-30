@@ -114,31 +114,16 @@ void view_circuit(Graph<Rua*> graph, list<pathList> organizedPOIs)
 	for (unsigned int j = 0; j < vertexes.size(); j++) {
 		edges = vertexes[j]->getAdj();
 		for (unsigned int k = 0; k < edges.size(); k++) {
-			if(paint_edge(organizedPOIs, vertexes[j]->getInfo())){
+			if(paint_edge(organizedPOIs, edges[k].getDest()->getInfo())){
 				gv->addEdge(idE, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
 				gv->setEdgeColor(idE++,"green");
+				//idE++;
 			}
 			else
 				gv->addEdge(idE++, vertexes[j]->getInfo()->getId(), edges[k].getDest()->getInfo()->getId(), EdgeType::DIRECTED);
 		}
 	}
 
-	/*vector<Edge<Rua*> > edges_paint;
-	for (unsigned int j = 0; j < vertexes.size(); j++) {
-		edges_paint = vertexes[j]->getAdj();
-		for (unsigned int k = 0; k < edges.size(); k++) {
-			for(list<pathList>::iterator it = organizedPOIs.begin(); it!= organizedPOIs.end();it++){
-				for(list<Path>::iterator iter = it->paths.begin(); iter!= it->paths.end();it++){
-					list<Rua*>::iterator check;
-					check = find(iter->streets.begin(),iter->streets.end(), vertexes[j]->getInfo());
-					if(check != iter->streets.end())
-						gv->setEdgeColor()
-
-				}
-			}
-		}
-	}
-*/
 	gv->rearrange();
 
 
